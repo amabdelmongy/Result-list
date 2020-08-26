@@ -1,0 +1,88 @@
+<p-dataView #dv 
+    [value]="tariffs"
+    paginatorPosition="both"
+    filterBy="name,price,benefits,downloadSpeed,uploadSpeed"
+    [sortField]="sortField"
+    [sortOrder]="sortOrder">
+    <p-header>
+        <div class="p-grid">
+            <div class="p-col-12 p-md-6">
+                <input type="search"
+                class="p-col-12"
+                pInputText placeholder="Search"
+                (input)="dv.filter($event.target.value)">
+            </div>
+            <div class="p-col-12 p-md-6">
+                <p-dropdown 
+                [options]="sortOptions"
+                [(ngModel)]="sortField"
+                placeholder="Sort By"
+                (onChange)="onSortChange($event)"
+                class="p-col-12">
+            </p-dropdown>
+                <p-dropdown
+                [options]="sortDirections"
+                [(ngModel)]="sortOrder"
+                placeholder="sort Order"
+                (onChange)="onSortOrderChange($event)"
+                class="p-col-12">
+            </p-dropdown>
+            </div>
+        </div>
+    </p-header>
+    <ng-template let-tariff pTemplate="listItem"> 
+        <div class="p-grid p-col-12 p-d-flex p-p-3">
+            <div class="p-col-1 p-md-1 p-flex-sm-1 p-d-flex">
+                <div class="p-as-lg-center" id="
+                ">
+                    {{ tariff.id }}.
+                </div>
+            </div> 
+            <div class="p-col-4 p-lg-2 p-md-4">
+                {{ tariff.name }}
+            </div>
+            <div class="p-col-4 p-lg-3 p-md-4">
+                <div class="p-d-none p-d-lg-inline-flex">
+                    Download
+                </div>
+                <div class="p-md-12 p-d-md-inline-flex">
+                    <div class="p-md-3 p-d-inline">
+                        <i class="pi pi-arrow-down"></i>
+                    </div>
+                    <div class="p-md-6 p-d-inline">
+                        {{ tariff.downloadSpeed }} Mbit/s
+                    </div>
+                </div>
+                <div class="p-d-none p-d-lg-inline-flex">
+                    Upload
+                </div>
+                <div class=" p-md-12 p-d-none p-d-md-inline-flex">
+                    <div class="p-md-3 p-d-inline">
+                        <i class="pi pi-arrow-up"></i>
+                    </div>
+                    <div class="p-md-6 p-d-inline">
+                        {{ tariff.uploadSpeed }} Mbit/s
+                    </div>
+                </div>
+            </div>
+            <div class="p-md-4 p-d-none p-d-lg-inline-flex">
+                <ul> 
+                    <li *ngFor="let benefit of tariff.benefits">
+                        {{ benefit }}
+                    </li> 
+                </ul>
+            </div>
+            <div class="p-col-3 p-md-2 p-sm-5 p-align-end p-sm-2">
+                <div class="p-md-6">
+                    {{ tariff.price | currency:'EUR' }}
+                </div>
+                <a class="p-md-6" href="#">
+                    <span class="p-md-6 p-d-none p-d-md-inline-flex">
+                        To Tariff
+                    </span>
+                    <i class="p-md-1 pi pi-external-link"></i>
+                </a>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>
