@@ -1,26 +1,12 @@
 # ResultList
-Task: Create a resultlist
-• Develop an Angular result list with the appended mock data.
-• Create an async service, which returns the mocked data (fake API).
-• The layout should be responsive or fluid (whatever preference you have)
-• Use a mobile first approach (the created scribbles are a general guideline for how it's
-supposed to look like)
-• Please also implement three filters to sort the tariff list (download/upload speed,
-price or any of the tariff attributes)
-Notes:
-• Please attach the zip version of your angular app on your mail
-• If you wrote tests for the JavaScript components please attach them to the project
-files
-• Use any Angular boilerplate that you evaluate as fitting for the task (Angular-Starter,
-Angular-Seed)
-• Please invest not more than 3 hours for this task and if you’re not able to finish it,
-send us the status quo of what you achieved. It’s not about perfection but more
-about the way how you work and what approaches you take.
-• Optional: Use SASS to compile the styles and Typescript as weapon of choice
+1. Develop an Angular result list using mock data.
+2. Create an async service, which returns the mocked data (fake API).
+3. The layout responsive or fluid
+4. Use a mobile first approach (the created scribbles are a general guideline for how it's supposed to look like)
+5. Implement three filters to sort the tariff list (download/upload speed, price or any of the tariff attributes)
 
-### Technology   
- -  using Angular 10 , Angular cli , Type Script , HTML and primeng 
-  
+### Technology
+ -  using Angular 10 , Angular cli , Type Script , HTML and primeng
 
 ###  How to run the code
 
